@@ -10,7 +10,7 @@ export default async function Page({
     <main className="container mx-auto px-4">
       <div>
         <h1 className="font-bold text-3xl lg:text-4xl uppercase mt-7">
-          Pastries
+          {slug}
         </h1>
         <p className=" text-sm lg:text-lg">
           Lorem ipsum dolor sit amet consectetur.
