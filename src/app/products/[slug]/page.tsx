@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Maicenitas from "@/images/homecategories1.png";
 import { AddtoCartButton } from "@/components/AddToCart";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 import {
   Accordion,
   AccordionContent,
@@ -14,6 +16,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { PlpProductCard } from "@/components/PlpProductCard";
 
 export default async function Page({
   params,
@@ -22,19 +25,20 @@ export default async function Page({
 }) {
   const slug = (await params).slug;
   return (
-    <main>
-      <div className="flex flex-col lg:flex-row container mx-auto lg:gap-12 mt-7 px-4">
+    <main className="container mx-auto px-4">
+      <div className="flex flex-col lg:items-start lg:flex-row  lg:gap-12 mt-7">
         <div className="flex grow-[2]">
-          <Image
-            src={Maicenitas}
-            width={264}
-            height={302}
-            alt="Plp prduct"
-            className="mb-2 w-full h-auto "
-          />
+          <AspectRatio ratio={16 / 9} className="bg-muted">
+            <Image
+              src={Maicenitas}
+              alt="Alfajores de maicena"
+              fill
+              className="h-full w-full rounded-md object-cover"
+            />
+          </AspectRatio>
         </div>
         <div className="flex flex-1 flex-col max-w-2xl">
-          <h3 className="font-bold text-2xl	">Maicenitas x12</h3>
+          <h3 className="font-bold text-2xl mt-4">Maicenitas x12</h3>
           <p className="mb-2">Short description</p>
           <p className="text-sm mb-3">£XX</p>
           <p className="text-sm mb-2">Quantity:</p>
@@ -80,17 +84,31 @@ export default async function Page({
           </Accordion>
         </div>
       </div>
-      <div className="flex flex-row container mx-auto">
-        <Carousel>
-          <CarouselContent>
-            <CarouselItem>...</CarouselItem>
-            <CarouselItem>...</CarouselItem>
-            <CarouselItem>...</CarouselItem>
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      </div>
+      <p className="font-bold text-center text-xl lg:mt-20 mt-8">
+        You may also like
+      </p>
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        className="w-full lg:mt-10 mt-8"
+      >
+        <CarouselContent>
+          {Array.from({ length: 20 }).map((_, item) => (
+            <CarouselItem
+              key={item}
+              className="pl-9 basis-1/2 md:basis-1/3 lg:basis-1/5"
+            >
+              <div>
+                <PlpProductCard />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </main>
   );
 }
