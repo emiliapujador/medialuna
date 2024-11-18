@@ -38,7 +38,7 @@ export default async function Page({
           </AspectRatio>
         </div>
         <div className="flex flex-1 flex-col max-w-2xl">
-          <h3 className="font-bold text-2xl mt-4">Maicenitas x12</h3>
+          <h3 className="font-bold text-2xl mt-4">{slug} x12</h3>
           <p className="mb-2">Short description</p>
           <p className="text-sm mb-3">£XX</p>
           <p className="text-sm mb-2">Quantity:</p>

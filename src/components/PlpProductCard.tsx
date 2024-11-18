@@ -1,5 +1,4 @@
 import Image from "next/image";
-import QuickAdd from "../images/quick-add.png";
 import Palmeritas from "../images/palmeritas.png";
 import { Button } from "@/components/ui/button";
 import { ShoppingBagIcon } from "lucide-react";
