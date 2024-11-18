@@ -2,6 +2,7 @@ import Image from "next/image";
 import HeroImage from "../images/Hero.png";
 import AboutUs from "@/components/AboutUs";
 import HomeCategories from "@/components/HomeCategories";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       </div>
       <AboutUs />
       <HomeCategories />
+      <Footer />
     </main>
   );
 }
