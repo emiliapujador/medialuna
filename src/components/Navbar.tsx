@@ -3,6 +3,7 @@ import MedialunaLogo from "../images/medialuna-navbar.png";
 import LensIcon from "../images/lens.png";
 import GlobalIcon from "../images/global 14.51.15.png";
 import BagIcon from "../images/bag 14.51.15.png";
+import { CartSheet } from "./CartSheet";
 
 export default function Navbar() {
   return (
@@ -23,6 +24,8 @@ export default function Navbar() {
           <Image src={LensIcon} width={27} height={27} alt="Lens icon" />
           <Image src={GlobalIcon} width={27} height={27} alt="Global icon" />
           <Image src={BagIcon} width={27} height={27} alt="Bag icon" />
+
+          <CartSheet />
         </div>
       </div>
     </div>
